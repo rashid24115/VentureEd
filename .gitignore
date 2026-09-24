@@ -1,0 +1,51 @@
+# Node dependencies and build artifacts
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+dist-ssr/
+*.local
+
+# Python virtual environment and cache
+venv/
+backend/venv/
+.venv/
+env/
+__pycache__/
+backend/app/**/__pycache__/
+backend/**/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+
+# Databases and runtime data
+*.db
+*.sqlite
+*.sqlite3
+backend/*.db
+backend/ventureai.db
+
+# Environment variables and secrets
+.env
+.env.*
+backend/.env
+
+# Logs and OS files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Generated PDF/HTML reports
+*.pdf
+*.html
+VentureEd_Technical_Viva_Report.pdf
+VentureEd_Technical_Viva_Report.html
+
+# Root temporary files
+package-lock.json
