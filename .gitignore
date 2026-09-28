@@ -43,9 +43,9 @@ Thumbs.db
 
 # Generated PDF/HTML reports
 *.pdf
-*.html
 VentureEd_Technical_Viva_Report.pdf
 VentureEd_Technical_Viva_Report.html
+!frontend/index.html
 
 # Root temporary files
 package-lock.json
