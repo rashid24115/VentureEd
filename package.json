@@ -1,0 +1,9 @@
+{
+  "name": "venture-ed",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm --prefix frontend install",
+    "build": "npm --prefix frontend install && npm run build --prefix frontend"
+  }
+}
