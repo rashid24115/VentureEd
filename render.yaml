@@ -1,0 +1,36 @@
+services:
+  # -------------------------------------------------------------
+  # 1. Backend Web Service (FastAPI)
+  # -------------------------------------------------------------
+  - type: web
+    name: ventureed-backend
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: DATABASE_URL
+        value: sqlite+aiosqlite:///./ventureai.db
+
+  # -------------------------------------------------------------
+  # 2. Frontend Static Site (React + Vite)
+  # -------------------------------------------------------------
+  - type: web
+    name: ventureed-frontend
+    runtime: static
+    rootDir: frontend
+    plan: free
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: VITE_API_URL
+        sync: false
